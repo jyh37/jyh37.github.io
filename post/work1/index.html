@@ -7,36 +7,31 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-<meta itemprop="name" content="Golang Gin 实战（五）| 接收数组和 Map">
-<meta itemprop="description" content="标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容">
-<meta itemprop="datePublished" content="2019-12-18T21:55:00+08:00" />
-<meta itemprop="dateModified" content="2019-12-18T21:55:00+08:00" />
-<meta itemprop="wordCount" content="10">
+<meta itemprop="name" content="Golang Gin 实战（三）| 路由参数">
+<meta itemprop="description" content="查询词条 作业1：在浏览器中输入［http://en.wikipedia.org/］进入维基百科；Search以下关键词，并将每个词条的解释（通常是第一段的第一句）。
+  Computer：A computer is a device that can be instructed to carry out an arbitrary set of arithmetic or logical operations automatically.
+  Computer science：Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.
+  Software：Computer software, or simply software, is a part of a computer system that consists of data or computer instructions, in contrast to the physical hardware from which the system is built.">
+
+<meta itemprop="wordCount" content="154">
 
 
 
 <meta itemprop="keywords" content="golang," />
-<meta property="og:title" content="Golang Gin 实战（五）| 接收数组和 Map" />
-<meta property="og:description" content="标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容" />
+<meta property="og:title" content="Golang Gin 实战（三）| 路由参数" />
+<meta property="og:description" content="查询词条 作业1：在浏览器中输入［http://en.wikipedia.org/］进入维基百科；Search以下关键词，并将每个词条的解释（通常是第一段的第一句）。
+  Computer：A computer is a device that can be instructed to carry out an arbitrary set of arithmetic or logical operations automatically.
+  Computer science：Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.
+  Software：Computer software, or simply software, is a part of a computer system that consists of data or computer instructions, in contrast to the physical hardware from which the system is built." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jyh37.github.io/2019/12/18/golang-gin-query-parameters-array-map.html" />
-<meta property="article:published_time" content="2019-12-18T21:55:00+08:00" />
-<meta property="article:modified_time" content="2019-12-18T21:55:00+08:00" />
+<meta property="og:url" content="https://jyh37.github.io/post/work1/" />
+
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Golang Gin 实战（五）| 接收数组和 Map"/>
-<meta name="twitter:description" content="标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容
-标题 段落内容"/>
+<meta name="twitter:title" content="Golang Gin 实战（三）| 路由参数"/>
+<meta name="twitter:description" content="查询词条 作业1：在浏览器中输入［http://en.wikipedia.org/］进入维基百科；Search以下关键词，并将每个词条的解释（通常是第一段的第一句）。
+  Computer：A computer is a device that can be instructed to carry out an arbitrary set of arithmetic or logical operations automatically.
+  Computer science：Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.
+  Software：Computer software, or simply software, is a part of a computer system that consists of data or computer instructions, in contrast to the physical hardware from which the system is built."/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -45,7 +40,7 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>Golang Gin 实战（五）| 接收数组和 Map</title>
+	<title>Golang Gin 实战（三）| 路由参数</title>
 	<link rel="stylesheet" href="https://jyh37.github.io/css/style.min.eac77496566fd7d5768fd650ddb0b2b181ca6a2d7c5fdd6fe6b8ba4bf47e566f.css" integrity="sha256-6sd0llZv19V2j9ZQ3bCysYHKai18X91v5ri6S/R+Vm8=" crossorigin="anonymous">
 	
 </head>
@@ -79,18 +74,31 @@
 
 
 	<main class="site-main section-inner thin animated fadeIn faster">
-		<h1>Golang Gin 实战（五）| 接收数组和 Map</h1>
+		<h1>Golang Gin 实战（三）| 路由参数</h1>
 		<div class="content">
-			<h2 id="标题">标题<a href="#标题" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>段落内容</p>
-<h2 id="标题-1">标题<a href="#标题-1" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>段落内容</p>
-<h2 id="标题-2">标题<a href="#标题-2" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>段落内容</p>
-<h2 id="标题-3">标题<a href="#标题-3" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>段落内容</p>
-<h2 id="标题-4">标题<a href="#标题-4" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
-<p>段落内容</p>
+			<h2 id="查询词条">查询词条<a href="#查询词条" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p>作业1：在浏览器中输入［http://en.wikipedia.org/］进入维基百科；Search以下关键词，并将每个词条的解释（通常是第一段的第一句）。</p>
+<ol>
+<li>
+<p>Computer：A computer is a device that can be instructed to carry out an arbitrary set of arithmetic or logical operations automatically.</p>
+</li>
+<li>
+<p>Computer science：Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.</p>
+</li>
+<li>
+<p>Software：Computer software, or simply software, is a part of a computer system that consists of data or computer instructions, in contrast to the physical hardware from which the system is built.</p>
+</li>
+<li>
+<p>Software engineering：Software engineering (SWE) is the application of engineering to the development of software in a systematic method.</p>
+</li>
+<li>
+<p>Alan Turing：Alan Mathison Turing OBE FRS (/ˈtjʊərɪŋ/; 23 June 1912 – 7 June 1954) was an English computer scientist, mathematician, logician, cryptanalyst, philosopher and theoretical biologist.</p>
+</li>
+<li>
+<p>Moore’s law：A term that dignifies the trend, first recognised by George E Moore, co-founder of Intel, in 1965, that the number of transistors on integrated circuits doubles about every two years.</p>
+</li>
+</ol>
+<p>[注：维基百科是IT 人最常用的百科知识网站]</p>
 
 		</div>
 	</main>

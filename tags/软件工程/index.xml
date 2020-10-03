@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>软件工程 on 非庄的博客</title>
+    <link>https://jyh37.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</link>
+    <description>Recent content in 软件工程 on 非庄的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Sat, 03 Oct 2020 11:36:33 +0800</lastBuildDate><atom:link href="https://jyh37.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>第一次作业提交</title>
+      <link>https://jyh37.github.io/posts/homework1/</link>
+      <pubDate>Sat, 03 Oct 2020 11:36:33 +0800</pubDate>
+      
+      <guid>https://jyh37.github.io/posts/homework1/</guid>
+      <description>查询词条 作业1：在浏览器中输入［http://en.wikipedia.org/］进入维基百科；Search以下关键词，并将每个词条的解释（通常是第一段的第一句）
+  Computer：A computer is a device that can be instructed to carry out an arbitrary set of arithmetic or logical operations automatically.
+  Computer science：Computer science is the study of the theory, experimentation, and engineering that form the basis for the design and use of computers.
+  Software：Computer software, or simply software, is a part of a computer system that consists of data or computer instructions, in contrast to the physical hardware from which the system is built.</description>
+    </item>
+    
+  </channel>
+</rss>
